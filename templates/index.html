@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Trend Prediction</title>
+    <style>
+        body {
+            background-image: url('C:\Users\MyVampire\Desktop\GFG\static\1.jpg,{{ background_image }}');
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label, input {
+            display: inline-block;
+            margin: 5px;
+        }
+        .plot-container {
+            text-align: center;
+        }
+        .plot-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Trend Prediction</h1>
+        <form method="post">
+            <label for="stock_symbol">Enter Stock Ticker:</label>
+            <input type="text" id="stock_symbol" name="stock_symbol" value="{{ stock_symbol }}">
+            <button type="submit">Submit</button>
+        </form>
+        <div class="plot-container">
+            <h2>Stock Price and Moving Averages</h2>
+            <img src="data:image/png;base64,{{ plot_url }}" alt="Stock plot">
+        </div>
+        <div class="price-container">
+            <h2>Real-Time Stock Price</h2>
+            <p>Current Price for {{ stock_symbol }}: {{ current_price }}</p>
+        </div>
+    </div>
+</body>
+</html>
